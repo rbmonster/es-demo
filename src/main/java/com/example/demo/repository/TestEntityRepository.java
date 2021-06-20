@@ -24,20 +24,4 @@ public interface TestEntityRepository extends ElasticsearchRepository<TestEntity
     List<TestEntity> findByStatus(String status);
 
 
-    public static void main(String[] args) {
-        String currency = "KRW";
-        int scale;
-        switch (currency) {
-            case "KRW":
-                scale = 6;
-                break;
-            case "JPY":
-                scale = 5;
-                break;
-            default:
-                scale = 4;
-        }
-        System.out.println(scale);
-    }
-
 }

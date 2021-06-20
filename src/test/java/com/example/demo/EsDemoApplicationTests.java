@@ -29,8 +29,8 @@ public class EsDemoApplicationTests {
         Criteria criteria = new Criteria("status").is("Success");
 //        Criteria criteria = new Criteria();
         CriteriaQuery criteriaQuery = new CriteriaQuery(criteria);
-        List<TestEntity> test = elasticsearchOperations.queryForList(criteriaQuery, TestEntity.class);
-        System.out.println(test);
+//        List<TestEntity> test = elasticsearchOperations.queryForList(criteriaQuery, TestEntity.class);
+//        System.out.println(test);
 
     }
 

@@ -14,7 +14,6 @@ import java.util.Date;
 @TypeAlias("testDemo")
 @Document(
         indexName = "test.test_index",
-        type = "_doc",
         createIndex = false
 )
 public class TestEntity {
