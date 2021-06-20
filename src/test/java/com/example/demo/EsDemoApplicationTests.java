@@ -1,8 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.entity.TestEntity;
+import com.example.demo.entity.TradeContract;
 import com.example.demo.repository.TestEntityRepository;
 import com.example.demo.service.TestEntityService;
+import com.example.demo.service.TradeContractService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +26,12 @@ public class EsDemoApplicationTests {
     @Autowired
     ElasticsearchOperations elasticsearchOperations;
 
+    @Autowired
+    TradeContractService tradeContractService;
+
     @Test
     public void contextLoads() {
-        Criteria criteria = new Criteria("status").is("Success");
+        Criteria criteria = new Criteria("status").is("Close");
 //        Criteria criteria = new Criteria();
         CriteriaQuery criteriaQuery = new CriteriaQuery(criteria);
 //        List<TestEntity> test = elasticsearchOperations.queryForList(criteriaQuery, TestEntity.class);
@@ -34,7 +39,12 @@ public class EsDemoApplicationTests {
 
     }
 
+    @Test
+    public void trade() {
 
+        Page<TradeContract> Closed = tradeContractService.find("Closed");
+        System.out.println(Closed);
+    }
 
     @Test
     public void contextLoads1() {
