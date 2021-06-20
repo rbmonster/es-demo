@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * <pre>
  * @Description:
@@ -26,4 +28,6 @@ public interface TradeContractRepository extends ElasticsearchRepository<TradeCo
     @Query("{\"match\": {\"status\": {\"query\": \"?0\"}}}")
     Page<TradeContract> findByName(String status, Pageable pageable);
 
+
+    List<TradeContract> findByStatus(String status);
 }
